@@ -1,1 +1,92 @@
-/* Your holiday theme goes here. Plan it with the design principles. */
+/* =============================================================
+   Secret Santa Generator - Custom Stylesheet
+   ============================================================= */
+
+:root {
+  --holiday-red: #b3000c;
+  --holiday-dark-red: #8a0009;
+  --holiday-green: #165b33;
+  --holiday-gold: #f8b229;
+  --cream-bg: #faf8f5;
+}
+
+/* General Body Styling */
+body {
+  background-color: var(--cream-bg) !important;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #333333;
+}
+
+/* Header Styling */
+.holiday-header {
+  background: linear-gradient(135deg, var(--holiday-red), var(--holiday-dark-red));
+  border-bottom: 4px solid var(--holiday-gold);
+  color: white;
+}
+
+/* Card Container Styling */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Form and Inputs */
+.form-control:focus {
+  border-color: var(--holiday-red);
+  box-shadow: 0 0 0 0.25rem rgba(179, 0, 12, 0.25);
+}
+
+/* Buttons */
+.btn-danger {
+  background-color: var(--holiday-red);
+  border-color: var(--holiday-red);
+}
+
+.btn-danger:hover {
+  background-color: var(--holiday-dark-red);
+  border-color: var(--holiday-dark-red);
+}
+
+.btn-success {
+  background-color: var(--holiday-green);
+  border-color: var(--holiday-green);
+}
+
+.btn-success:hover {
+  background-color: #0f3d21;
+  border-color: #0f3d21;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* =============================================================
+   Print-Only CSS (Ensures only matches print)
+   ============================================================= */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  #matches-modal, 
+  #matches-modal * {
+    visibility: visible;
+  }
+  
+  #matches-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .modal-footer, 
+  .btn-close {
+    display: none !important;
+  }
+}
